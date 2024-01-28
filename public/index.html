@@ -30,13 +30,28 @@
       >Click</button>
     <h2 id="h2">ここに表示</h2>
 
-    <p>loading</p>
+    <p>ボタンにマウスが乗った時にloading</p>
     <button
       hx-get="/greeting"
       hx-target="#h3"
       hx-indicator="#indicator"
+      hx-trigger="mouseover"
       >Click</button>
     <span class="htmx-indicator" id="indicator">Loading...</span>
     <h2 id="h3">ここに表示</h2>
+
+    <p>ユーザ一覧</p>
+      <button
+      hx-get="/users"
+      hx-target="#users"
+      hx-indicator="#indicator2"
+      hx-swap="innerHTML"
+      hx-trigger="load"
+    >
+      Click
+    </button>
+    <span class="htmx-indicator" id="indicator2">Loading...</span>
+    <h2>ユーザ一覧</h2>
+    <ul id="users"></ul>
   </body>
 </html>

@@ -12,4 +12,13 @@ app.get('/greeting', async (req, res) => {
   res.send('<span style="color:gray">Hello HTMX!</span>');
 });
 
+// ユーザー一覧
+app.get('/users', async (req, res) => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await response.json();
+  const html = `${users.map((user) => `<li>${user.name}</li>`).join('')}`;
+  
+  return res.send(html);
+})
+
 app.listen(port, () => console.log(`Express app listening on port ${port}`));
