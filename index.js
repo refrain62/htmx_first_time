@@ -7,8 +7,9 @@ const port = 3000;
 app.use(express.static('public'));
 
 // ルーティングを追加
-app.get('/greeting', (req, res) =>
-  res.send('<span style="color:grey">Hello HTMX!</span>')
-);
+app.get('/greeting', async (req, res) => {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  res.send('<span style="color:gray">Hello HTMX!</span>');
+});
 
 app.listen(port, () => console.log(`Express app listening on port ${port}`));

@@ -29,5 +29,14 @@
       hx-target="#h2"
       >Click</button>
     <h2 id="h2">ここに表示</h2>
+
+    <p>loading</p>
+    <button
+      hx-get="/greeting"
+      hx-target="#h3"
+      hx-indicator="#indicator"
+      >Click</button>
+    <span class="htmx-indicator" id="indicator">Loading...</span>
+    <h2 id="h3">ここに表示</h2>
   </body>
 </html>
