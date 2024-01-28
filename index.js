@@ -21,4 +21,9 @@ app.get('/users', async (req, res) => {
   return res.send(html);
 })
 
+app.use(express.urlencoded({ extended: true }));
+app.post('/users/create', (req, res) =>
+  res.send(`<li>${req.body.name}</li>`)
+);
+
 app.listen(port, () => console.log(`Express app listening on port ${port}`));

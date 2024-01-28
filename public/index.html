@@ -53,5 +53,28 @@
     <span class="htmx-indicator" id="indicator2">Loading...</span>
     <h2>ユーザ一覧</h2>
     <ul id="users"></ul>
+
+    <p>hx-post属性</p>
+    <form
+      hx-post="/users/create"
+      hx-trigger="submit"
+      hx-target="#users2"
+      hx-swap="beforeend"
+    >
+      <input type="text" name="name" />
+      <button type="submit">Add</button>
+    </form>
+    <span class="htmx-indicator" id="indicator3">Loading...</span>
+    <h2
+      hx-get="/users"
+      hx-target="#users2"
+      hx-indicator="#indicator3"
+      hx-swap="innerHTML"
+      hx-trigger="load"
+    >
+      ユーザ一覧
+    </h2>
+    <ul id="users2"></ul>
+
   </body>
 </html>
