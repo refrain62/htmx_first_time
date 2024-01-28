@@ -24,7 +24,8 @@
       
     <p>hx-target属性</p>
     <button
-      hx-get="https://jsonplaceholder.typicode.com/users/1"
+      hx-get="/greeting"
+      hx-swap="outerHTML"
       hx-target="#h2"
       >Click</button>
     <h2 id="h2">ここに表示</h2>

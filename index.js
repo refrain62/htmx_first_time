@@ -6,4 +6,9 @@ const port = 3000;
 //app.get('/', (req, res) => res.send('Hello world"'));
 app.use(express.static('public'));
 
+// ルーティングを追加
+app.get('/greeting', (req, res) =>
+  res.send('<span style="color:grey">Hello HTMX!</span>')
+);
+
 app.listen(port, () => console.log(`Express app listening on port ${port}`));
